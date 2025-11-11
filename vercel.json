@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "chatgpt/to-do-list/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "chatgpt/to-do-list/$1"
+    }
+  ]
+}

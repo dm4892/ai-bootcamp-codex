@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spec-Driven To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="app-title">
+      <header>
+        <p class="eyebrow">Spec-driven demo</p>
+        <h1 id="app-title">To-Do List</h1>
+        <p class="subhead">
+          Add tasks, mark them complete, and keep track of what still needs attention.
+        </p>
+      </header>
+
+      <form id="todo-form" autocomplete="off" aria-label="Create a task">
+        <label class="sr-only" for="task-input">Task description</label>
+        <div class="input-row">
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            placeholder="What needs to be done?"
+            required
+            maxlength="120"
+          />
+          <button type="submit">Add</button>
+        </div>
+        <p id="validation" class="validation" role="alert" aria-live="polite"></p>
+      </form>
+
+      <section aria-live="polite">
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty-state" hidden>
+          You're all caught up—add a task to get started.
+        </p>
+      </section>
+
+      <footer class="app-footer">
+        <p>
+          <span id="tasks-remaining">0</span>
+          tasks remaining
+        </p>
+        <button id="clear-completed" type="button" class="linkish">
+          Clear completed
+        </button>
+      </footer>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
